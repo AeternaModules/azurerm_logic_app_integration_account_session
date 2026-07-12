@@ -1,3 +1,7 @@
+output "logic_app_integration_account_sessions_id" {
+  description = "Map of id values across all logic_app_integration_account_sessions, keyed the same as var.logic_app_integration_account_sessions"
+  value       = { for k, v in azurerm_logic_app_integration_account_session.logic_app_integration_account_sessions : k => v.id }
+}
 output "logic_app_integration_account_sessions_content" {
   description = "Map of content values across all logic_app_integration_account_sessions, keyed the same as var.logic_app_integration_account_sessions"
   value       = { for k, v in azurerm_logic_app_integration_account_session.logic_app_integration_account_sessions : k => v.content }
